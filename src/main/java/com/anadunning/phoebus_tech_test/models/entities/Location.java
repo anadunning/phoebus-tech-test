@@ -1,7 +1,12 @@
 package com.anadunning.phoebus_tech_test.models.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "locations")
 public class Location {
 	
+	@Id
 	private String id;
 	private Double latitude;
 	private Double longitude;

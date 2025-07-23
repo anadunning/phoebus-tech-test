@@ -1,18 +1,23 @@
 package com.anadunning.phoebus_tech_test.models.entities;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "exchanges")
 public class Exchange {
 	
+	@Id
 	private String id;
-	private Date instant;
+	private LocalDateTime instant;
 	
 	private CommunityCentre centre;
 
 	public Exchange() {
 	}
 
-	public Exchange(String id, Date instant, CommunityCentre centre) {
+	public Exchange(String id, LocalDateTime instant, CommunityCentre centre) {
 		this.id = id;
 		this.instant = instant;
 		this.centre = centre;
@@ -26,11 +31,11 @@ public class Exchange {
 		this.id = id;
 	}
 
-	public Date getInstant() {
+	public LocalDateTime getInstant() {
 		return instant;
 	}
 
-	public void setInstant(Date instant) {
+	public void setInstant(LocalDateTime instant) {
 		this.instant = instant;
 	}
 
