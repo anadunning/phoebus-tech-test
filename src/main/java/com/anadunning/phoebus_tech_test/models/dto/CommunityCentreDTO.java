@@ -1,28 +1,42 @@
-package com.anadunning.phoebus_tech_test.models.entities;
+package com.anadunning.phoebus_tech_test.models.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.List;
 
-@Document(collection = "centres")
-public class CommunityCentre {
+import com.anadunning.phoebus_tech_test.models.entities.CommunityCentre;
+import com.anadunning.phoebus_tech_test.models.entities.Exchange;
+import com.anadunning.phoebus_tech_test.models.entities.Resource;
+
+public class CommunityCentreDTO {
 	
-	@Id
 	private String id;
 	private String name;
 	private Integer maxNumPeople;
 	private Integer currentNumPeople;
-	private boolean hasReachedMaxCapacity = false;
+	private boolean hasReachedMaxCapacity;
 	
-	public CommunityCentre() {
+//	private CommunityCentre centre;
+	
+	private List<Resource> resources;
+	private List<Exchange> exchanges;
+	
+	public CommunityCentreDTO() {
 	}
 
-	public CommunityCentre(String id, String name, Integer maxNumPeople, Integer currentNumPeople,
+	public CommunityCentreDTO(String id, String name, Integer maxNumPeople, Integer currentNumPeople,
 			boolean hasReachedMaxCapacity) {
 		this.id = id;
 		this.name = name;
 		this.maxNumPeople = maxNumPeople;
 		this.currentNumPeople = currentNumPeople;
 		this.hasReachedMaxCapacity = hasReachedMaxCapacity;
+	}
+	
+	public CommunityCentreDTO(CommunityCentre entity) {
+		id = entity.getId();
+		name = entity.getName();
+		maxNumPeople = entity.getMaxNumPeople();
+		currentNumPeople = entity.getCurrentNumPeople();
+		hasReachedMaxCapacity = entity.isHasReachedMaxCapacity();
 	}
 
 	public String getId() {
@@ -65,4 +79,12 @@ public class CommunityCentre {
 		this.hasReachedMaxCapacity = hasReachedMaxCapacity;
 	}
 
+	public List<Resource> getResources() {
+		return resources;
+	}
+
+	public List<Exchange> getExchanges() {
+		return exchanges;
+	}
+	
 }

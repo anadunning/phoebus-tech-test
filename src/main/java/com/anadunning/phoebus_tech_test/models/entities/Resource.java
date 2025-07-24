@@ -11,19 +11,18 @@ public class Resource {
 	private String description;
 	private Integer quantity;
 	private Integer value;
-	
-	private CommunityCentre centre;
+	private String centreId;
 
 	public Resource() {
 	}
 
-	public Resource(String id, String description, Integer quantity, Integer value, CommunityCentre centre) {
+	public Resource(String id, String description, Integer quantity, Integer value, String centreId) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.quantity = quantity;
 		this.value = value;
-		this.centre = centre;
+		this.centreId = centreId;
 	}
 
 	public String getId() {
@@ -58,13 +57,12 @@ public class Resource {
 		this.value = value;
 	}
 
-	public CommunityCentre getCentre() {
-		return centre;
+	public String getCentreId() {
+		return centreId;
 	}
 
-	public void setCentre(CommunityCentre centre) {
-		this.centre = centre;
+	public void setCentreId(String centreId) {
+		this.centreId = centreId;
 	}
-	
 
 }

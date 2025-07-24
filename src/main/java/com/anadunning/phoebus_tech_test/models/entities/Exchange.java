@@ -11,16 +11,15 @@ public class Exchange {
 	@Id
 	private String id;
 	private LocalDateTime instant;
-	
-	private CommunityCentre centre;
+	private String centreId;
 
 	public Exchange() {
 	}
 
-	public Exchange(String id, LocalDateTime instant, CommunityCentre centre) {
+	public Exchange(String id, LocalDateTime instant, String centreId) {
 		this.id = id;
 		this.instant = instant;
-		this.centre = centre;
+		this.centreId = centreId;
 	}
 
 	public String getId() {
@@ -39,13 +38,13 @@ public class Exchange {
 		this.instant = instant;
 	}
 
-	public CommunityCentre getCentre() {
-		return centre;
+	public String getCentreId() {
+		return centreId;
 	}
 
-	public void setCentre(CommunityCentre centre) {
-		this.centre = centre;
+	public void setCentreId(String centreId) {
+		this.centreId = centreId;
 	}
-	
-	
+
+		
 }
